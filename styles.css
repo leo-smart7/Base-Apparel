@@ -3,7 +3,8 @@
 :root {
     /* Primary */
     --primary-pink: hsl(0, 36%, 70%);
-    --primary-red: hsl(0, 93%, 68%);
+    --primary-red: hsl(0, 74%, 74%);
+    --primary-darkred: hsl(0, 93%, 68%);
     /* Neutral */
     --neutral-gray: hsl(0, 6%, 24%);
     /* Background/-color */
@@ -29,12 +30,12 @@ body {
 
 .container {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .left-section {
+    flex: 1;
     display: flex;
-    /* flex: 1; */
     flex-direction: column;
     justify-content: center;
     padding: 60px 165px;
@@ -57,6 +58,7 @@ body {
     flex-direction: column;
     letter-spacing: 10px;
     font-size: 54px;
+    margin-bottom: 20px;
     color: var(--neutral-gray);
 }
 
@@ -69,14 +71,52 @@ body {
     color: var(--primary-pink);
     line-height: 30px;
     width: 445px;
+    margin-bottom: 32px;
 }
 
 .email-wrapper {
     position: relative;
-    /* width: 445px; */
+    width: 445px;
+    margin-bottom: 138px;
 }
 
 .email-wrapper input {
-    width: 100%;
+    width: 445px;
+    border-radius: 25px;
+    border: 1px solid var(--primary-pink);
+    padding: 11px 70px 11px 32px;
+    background: transparent;
+    font-size: 15px;
+}
 
+.email-wrapper input:focus {
+    border: 1px solid var(--primary-darkred);
+    outline: none;
+}
+
+.email-wrapper input::placeholder {
+    color: var(--primary-pink);
+}
+
+.send-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 70px;
+    border: none;
+    background-color: var(--primary-red);
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(206, 59, 59, 0.3);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 20px;
+    }
+  
 }
